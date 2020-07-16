@@ -1,0 +1,84 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather in <%= city %></title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+   
+    <a  href="/"  class="home">
+      <img src="icons/sun.png">
+  </a>
+
+    <% video_src="videos/" +  icon  + ".mp4" %>
+    
+    <div class="container">
+
+      
+      
+
+      <div class="vid-container">
+        <video autoplay muted loop id="bg-video">
+          <source src=<%= video_src %> type="video/mp4" />
+        </video>
+      </div>
+      
+
+      <div class="box">
+        <!-- <h1>The Tempurature in <%= city %> is currently <%= temp %> &deg;F</h1> -->
+        <h1> <%= city %> </h1>
+        <h3><%= desc %></h3>
+        <h2><%= temp %> &deg;F</h2>
+      
+        <img src= <%= imageURL %> alt="weather-icon ">
+
+       
+
+        <div class="details">
+
+        <%  var sunset = new Date(ss*1000).toLocaleTimeString("en-US") %>
+        <%  var sunrise = new Date(sr*1000).toLocaleTimeString("en-US") %>
+
+        
+
+          <p> 
+            <img  src="icons/humidity.png" alt="humidity">
+            <%= hum %>  &#37; 
+          </p>
+          <p> 
+            <img  src="icons/cold.png" alt="low-temp">
+            <%= temp_min %> &deg;F 
+          </p>
+          <p> 
+            <img  src="icons/hot.png" alt="high-temp">
+            <%= temp_max %> &deg;F 
+          </p>
+          <p>
+            <img  src="icons/sunrise.png" alt="sunrise"> 
+            <%= sunrise %> 
+          </p>
+          <p> 
+            <img  src="icons/sunset.png" alt="sunset">
+            <%= sunset %> 
+          </p>
+          <p>
+            <img  src="icons/wind.png" alt="wind"> 
+            <%= ws %> mph 
+          </p>
+    
+        </div>
+       </div>
+
+       
+    </div>
+
+
+  </body>
+
+</html>
